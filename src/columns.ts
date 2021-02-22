@@ -1,7 +1,11 @@
+import ColumnFilter from './ColumnFilter';
+
+
 const columns = [
   {
     Header: "OS",
-    accessor: 'os'
+    accessor: 'os',
+    Filter: ColumnFilter
   },
   {
     Header: "CED",
@@ -9,7 +13,7 @@ const columns = [
   },
   {
     Header: "Cliente Final",
-    accessor: 'cliente'
+    accessor: 'cliente',
   },
   {
     Header: "Bandeira",

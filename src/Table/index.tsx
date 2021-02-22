@@ -1,13 +1,18 @@
 import React, { useMemo } from 'react';
 
-import { useTable, useSortBy } from 'react-table';
+import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table';
+import { format } from 'date-fns'
 
 import DATA from '../data';
 import COLUMNS from '../columns';
+import GlobalFilter from '../GlobalFilter';
 
 
 const Table: React.FC = () => {
-  const data = useMemo<any>(() => [...DATA], []);
+  const data = useMemo<any>(() => [...DATA.map(d => ({
+    ...d,
+    data: format(new Date(d.data), 'dd/MM/yyyy')
+  }))], []);
   const columns = useMemo<any>(() => [...COLUMNS], []);
 
   const {
@@ -16,17 +21,24 @@ const Table: React.FC = () => {
     headerGroups,
     rows,
     prepareRow,
+    state,
+    setGlobalFilter
   } = useTable(
     {
       columns,
       data,
     },
-    useSortBy
+    useFilters,
+    useGlobalFilter,
+    useSortBy,
   )
+
+  const { globalFilter } = state
   return (
     <div>
       <h1>React Table</h1>
 
+      <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <table {...getTableProps()}>
         <thead>
           {
@@ -35,13 +47,14 @@ const Table: React.FC = () => {
                 {headerGroup.headers.map(column => (
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render('Header')}
+                    <div>{column.canFilter ? column.render('Filter') : null}</div>
                     <span>
-                    {column.isSorted
-                      ? column.isSortedDesc
-                        ? ' 🔽'
-                        : ' 🔼'
-                      : ''}
-                  </span>
+                      {column.isSorted
+                        ? column.isSortedDesc
+                          ? ' 🔽'
+                          : ' 🔼'
+                        : ''}
+                    </span>
                   </th>
                 ))}
               </tr>
