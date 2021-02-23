@@ -1,14 +1,23 @@
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table';
+import { useTable, useSortBy, useGlobalFilter, usePagination } from 'react-table';
+import { FiArrowDown, FiArrowLeft, FiArrowRight, FiArrowUp } from 'react-icons/fi';
 import { format } from 'date-fns'
 
 import DATA from '../data';
 import COLUMNS from '../columns';
 import GlobalFilter from '../GlobalFilter';
 
-
 const Table: React.FC = () => {
+  const [pageNumber, setPageNumber] = useState(() => {
+    const page = localStorage.getItem('pageNumber')
+    return page !== null ? JSON.parse(page) : 0;
+  })
+
+  useEffect(() => {
+    localStorage.setItem('pageNumber', JSON.stringify(pageNumber))
+  }, [pageNumber])
+
   const data = useMemo<any>(() => [...DATA.map(d => ({
     ...d,
     data: format(new Date(d.data), 'dd/MM/yyyy')
@@ -19,21 +28,32 @@ const Table: React.FC = () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
-    prepareRow,
+    rows, // tabela sem paginação
+    page,
+    gotoPage,
+    pageCount,
+    nextPage,
+    canNextPage,
+    previousPage,
+    canPreviousPage,
+    pageOptions,
     state,
+    prepareRow,
     setGlobalFilter
   } = useTable(
     {
       columns,
       data,
+      initialState: { pageIndex: pageNumber }
     },
-    useFilters,
     useGlobalFilter,
     useSortBy,
+    usePagination,
   )
 
-  const { globalFilter } = state
+  const { globalFilter, pageIndex, pageSize } = state // page-size numeros de items por pagina
+
+
   return (
     <div>
       <h1>React Table</h1>
@@ -47,12 +67,11 @@ const Table: React.FC = () => {
                 {headerGroup.headers.map(column => (
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                     {column.render('Header')}
-                    <div>{column.canFilter ? column.render('Filter') : null}</div>
                     <span>
                       {column.isSorted
                         ? column.isSortedDesc
-                          ? ' 🔽'
-                          : ' 🔼'
+                          ? <FiArrowDown />
+                          : <FiArrowUp />
                         : ''}
                     </span>
                   </th>
@@ -63,7 +82,7 @@ const Table: React.FC = () => {
 
         <tbody {...getTableBodyProps()}>
           {
-            rows.map(row => {
+            page.map(row => {
 
               prepareRow(row)
               return (
@@ -84,6 +103,37 @@ const Table: React.FC = () => {
             })}
         </tbody>
       </table>
+      <div>
+        <span>
+          Ir para pagina: {' '}
+          <input type="number" defaultValue={pageIndex} 
+            onChange={(e) => {
+              e.target.value ? 
+                setPageNumber(Number(e.target.value) -1) : 
+                setPageNumber(0)
+               
+              gotoPage(pageNumber)
+            }}
+            style={{ width: '50px' }}
+          />
+        </span>
+        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
+        <button onClick={() => previousPage()} disabled={!canPreviousPage}><FiArrowLeft /></button>
+        <span>
+          Page{' '}
+          <strong>
+            {pageIndex + 1} de {pageOptions.length} 
+          </strong>
+        </span>
+        <button onClick={() => nextPage()} disabled={!canNextPage}><FiArrowRight /></button>
+        <button onClick={() => gotoPage(pageCount -1)} disabled={!canNextPage}>{'>>'}</button>
+        <span>
+        {' '}Items por pagina{' '}
+          <strong> 
+            {pageSize} 
+          </strong>
+        </span>
+      </div>
     </div>
   );
 }
