@@ -1,0 +1,15 @@
+th.MuiTableCell-head {
+  font-weight: 700;
+}
+
+tr {
+  transition: background 0.2s;
+}
+
+tr.MuiTableRow-root:hover {
+  background: #7159c1;
+  color: #fff;
+  cursor: pointer;
+}
+
+

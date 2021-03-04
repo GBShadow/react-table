@@ -1,43 +1,40 @@
-import ColumnFilter from './ColumnFilter';
-
 
 const columns = [
   {
-    Header: "OS",
-    accessor: 'os',
-    Filter: ColumnFilter
+    field: 'os',
+    title: "OS",
   },
   {
-    Header: "CED",
-    accessor: 'ced'
+    field: 'ced',
+    title: "CED",
   },
   {
-    Header: "Cliente Final",
-    accessor: 'cliente',
+    field: 'cliente',
+    title: "Cliente Final",
   },
   {
-    Header: "Bandeira",
-    accessor: 'bandeira'
+    field: 'bandeira',
+    title: "Bandeira",
   },
   {
-    Header: "Técnico",
-    accessor: 'tecnico'
+    field: 'tecnico',
+    title: "Técnico",
   },
   {
-    Header: "Projeto",
-    accessor: 'projeto'
+    field: 'projeto',
+    title: "Projeto",
   },
   {
-    Header: "Data Atendimeto",
-    accessor: 'data'
+    field: 'data',
+    title: "Data Atendimento",
   },
   {
-    Header: "Status",
-    accessor: 'status'
+    field: 'status',
+    title: "Status",
   },
   {
-    Header: "Ações",
-    accessor: 'acoes'
+    field: 'acoes',
+    title: "Ações",
   },
 ];
 

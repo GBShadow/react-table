@@ -11,7 +11,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 9,
+    os: 52,
     cliente: 'Carrefur',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -22,7 +22,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 22,
+    os: 322,
     cliente: 'Extra',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -33,7 +33,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 17,
+    os: 529,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -44,7 +44,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 567,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -55,7 +55,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 589,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -66,7 +66,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 511,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -77,7 +77,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 3,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -88,7 +88,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 578,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -99,7 +99,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 598,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -110,7 +110,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 5902,
+    os: 5122,
     cliente: 'GS',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -132,7 +132,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 32,
+    os: 322,
     cliente: 'Extra',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -143,7 +143,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 67,
+    os: 529,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -154,7 +154,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 38,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -165,7 +165,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 31,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -176,7 +176,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 53,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -187,7 +187,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 93,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -198,7 +198,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 30,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -209,7 +209,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 311,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -219,7 +219,7 @@ const data = [
     status: 'concluido',
     acoes: 'edit',
   },{
-    os: 5871,
+    os: 5122,
     cliente: 'GS',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -241,7 +241,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 111,
+    os: 322,
     cliente: 'Extra',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -252,7 +252,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 43,
+    os: 529,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -263,7 +263,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 354,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -274,7 +274,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 123,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -285,7 +285,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 113,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',
@@ -296,7 +296,7 @@ const data = [
     acoes: 'edit',
   },
   {
-    os: 773,
+    os: 522,
     cliente: 'ENFHATA',
     ced: 'GPA2562',
     bandeira: 'EXTRA',

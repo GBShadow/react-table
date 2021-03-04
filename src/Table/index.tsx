@@ -8,15 +8,10 @@ import DATA from '../data';
 import COLUMNS from '../columns';
 import GlobalFilter from '../GlobalFilter';
 
-const Table: React.FC = () => {
-  const [pageNumber, setPageNumber] = useState(() => {
-    const page = localStorage.getItem('pageNumber')
-    return page !== null ? JSON.parse(page) : 0;
-  })
+import { Container } from './styles';
 
-  useEffect(() => {
-    localStorage.setItem('pageNumber', JSON.stringify(pageNumber))
-  }, [pageNumber])
+const Table: React.FC = () => {
+  const [pageNumber, setPageNumber] = useState(0)
 
   const data = useMemo<any>(() => [...DATA.map(d => ({
     ...d,
@@ -55,7 +50,7 @@ const Table: React.FC = () => {
 
 
   return (
-    <div>
+    <Container>
       <h1>React Table</h1>
 
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
@@ -106,7 +101,7 @@ const Table: React.FC = () => {
       <div>
         <span>
           Ir para pagina: {' '}
-          <input type="number" defaultValue={pageIndex} 
+          <input type="number" defaultValue={pageIndex + 1} 
             onChange={(e) => {
               e.target.value ? 
                 setPageNumber(Number(e.target.value) -1) : 
@@ -134,7 +129,7 @@ const Table: React.FC = () => {
           </strong>
         </span>
       </div>
-    </div>
+    </Container>
   );
 }
 
